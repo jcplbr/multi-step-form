@@ -17,7 +17,7 @@ export function UserForm({
   updateFields,
 }: UserFormProps) {
   return (
-    <FormWrapper title="User Details">
+    <FormWrapper title="Enter your details to continue.">
       <label>First Name</label>
       <input
         autoFocus

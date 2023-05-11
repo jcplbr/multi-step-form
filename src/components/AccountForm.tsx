@@ -15,7 +15,7 @@ export function AccountForm({
   updateFields,
 }: AccountFormProps) {
   return (
-    <FormWrapper title="Account Creation">
+    <FormWrapper title="Enter a valid username and passowrd to finish.">
       <label>Email</label>
       <input
         autoFocus

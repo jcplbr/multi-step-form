@@ -1,8 +1,11 @@
 import { FormEvent, useState } from "react";
-import { AccountForm } from "./AccountForm";
-import { AddressForm } from "./AddressForm";
-import { UserForm } from "./UserForm";
-import { useMultiStepForm } from "./useMultiStepFrom";
+import { AccountForm } from "./components/AccountForm";
+import { AddressForm } from "./components/AddressForm";
+import { UserForm } from "./components/UserForm";
+import { useMultiStepForm } from "./hooks/useMultiStepForm";
+import { MainContainer } from "./components/MainContainer";
+import { Header } from "./components/Header";
+import { FormUtilities } from "./components/FormUtilities";
 
 type FormData = {
   firstName: string;
@@ -47,50 +50,32 @@ function App() {
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!isLastStep) return next();
-    alert("Successful account creation!");
+    alert("Success!");
   }
 
   return (
-    <div
-      style={{
-        position: "relative",
-        background: "white",
-        border: "1px solid black",
-        padding: "2rem",
-        margin: "1rem",
-        borderRadius: ".5rem",
-        fontFamily: "Inter",
-        maxWidth: "max-content",
-      }}
-    >
-      <form onSubmit={onSubmit}>
-        <div
-          style={{
-            position: "absolute",
-            top: ".5rem",
-            right: ".5rem",
-          }}
-        >
-          {currentStepIndex + 1} / {steps.length}
-        </div>
+    <MainContainer>
+      <Header />
+      <form
+        onSubmit={onSubmit}
+        style={{ padding: "0 41px 0 31px", display: "flex" }}
+      >
         {step}
-        <div
-          style={{
-            marginTop: "1rem",
-            display: "flex",
-            gap: ".5rem",
-            justifyContent: "flex-end",
-          }}
-        >
-          {!isFirstStep && (
-            <button onClick={back} type="button">
-              Back
-            </button>
-          )}
-          <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
-        </div>
+        <FormUtilities>
+          <div>
+            <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
+            {!isFirstStep && (
+              <button onClick={back} type="button">
+                Back
+              </button>
+            )}
+          </div>
+          <div>
+            {currentStepIndex + 1} / {steps.length}
+          </div>
+        </FormUtilities>
       </form>
-    </div>
+    </MainContainer>
   );
 }
 

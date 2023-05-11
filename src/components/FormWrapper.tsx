@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import styled from "styled-components";
 
 type FormWrapperProps = {
   title: string;
@@ -7,10 +8,10 @@ type FormWrapperProps = {
 
 export function FormWrapper({ title, children }: FormWrapperProps) {
   return (
-    <>
-      <h2 style={{ textAlign: "center", margin: "0", marginBottom: "2rem" }}>
+    <FormContent>
+      <p style={{ textAlign: "center", margin: "0", marginBottom: "2rem" }}>
         {title}
-      </h2>
+      </p>
       <div
         style={{
           display: "grid",
@@ -21,6 +22,12 @@ export function FormWrapper({ title, children }: FormWrapperProps) {
       >
         {children}
       </div>
-    </>
+    </FormContent>
   );
 }
+
+const FormContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+`;
