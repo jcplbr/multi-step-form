@@ -6,6 +6,7 @@ import { useMultiStepForm } from "./hooks/useMultiStepForm";
 import { MainContainer } from "./components/MainContainer";
 import { Header } from "./components/Header";
 import { FormUtilities } from "./components/FormUtilities";
+import { Button, NextButton } from "./components/Button";
 
 type FormData = {
   firstName: string;
@@ -58,16 +59,20 @@ function App() {
       <Header />
       <form
         onSubmit={onSubmit}
-        style={{ padding: "0 41px 0 31px", display: "flex" }}
+        style={{ padding: "0 41px 0 31px", display: "flex", gap: "24px" }}
       >
         {step}
         <FormUtilities>
-          <div>
-            <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "12px" }}
+          >
+            <NextButton type="submit">
+              {isLastStep ? "Finish" : "Next"}
+            </NextButton>
             {!isFirstStep && (
-              <button onClick={back} type="button">
+              <Button onClick={back} type="button">
                 Back
-              </button>
+              </Button>
             )}
           </div>
           <div>

@@ -18,7 +18,7 @@ export function UserForm({
 }: UserFormProps) {
   return (
     <FormWrapper title="Enter your details to continue.">
-      <label>First Name</label>
+      <label>First Name:</label>
       <input
         autoFocus
         required
@@ -26,14 +26,14 @@ export function UserForm({
         value={firstName}
         onChange={(e) => updateFields({ firstName: e.target.value })}
       />
-      <label>Last Name</label>
+      <label>Last Name:</label>
       <input
         required
         type="text"
         value={lastName}
         onChange={(e) => updateFields({ lastName: e.target.value })}
       />
-      <label>Age</label>
+      <label>Age:</label>
       <input
         required
         min={1}

@@ -20,7 +20,7 @@ export function AddressForm({
 }: AddressFormProps) {
   return (
     <FormWrapper title="Enter your address informations to continue.">
-      <label>Street</label>
+      <label>Street:</label>
       <input
         autoFocus
         required
@@ -28,21 +28,21 @@ export function AddressForm({
         value={street}
         onChange={(e) => updateFields({ street: e.target.value })}
       />
-      <label>City</label>
+      <label>City:</label>
       <input
         required
         type="text"
         value={city}
         onChange={(e) => updateFields({ city: e.target.value })}
       />
-      <label>State</label>
+      <label>State:</label>
       <input
         required
         type="text"
         value={state}
         onChange={(e) => updateFields({ state: e.target.value })}
       />
-      <label>Zip</label>
+      <label>Zip:</label>
       <input
         required
         type="text"
