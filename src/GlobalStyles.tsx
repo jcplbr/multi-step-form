@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow: hidden;
     height: 100%;
     background: #008282;
+    font-family: w95fa;
   }
 
   input {
@@ -30,5 +31,17 @@ export const GlobalStyles = createGlobalStyle`
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+  label {
+    letter-spacing: 0.2px;
+  }
+
+  label::after {
+      content: "";
+      display: block;
+      border-bottom: 2px solid black;
+      margin-top: -1px;
+      width: 10px;
   }
 `;

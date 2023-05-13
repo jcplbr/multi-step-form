@@ -9,17 +9,21 @@ type FormWrapperProps = {
 export function FormWrapper({ title, children }: FormWrapperProps) {
   return (
     <FormContainer>
-      <img draggable="false" src="../../public/assets/network.png" width={48} />
+      <img
+        draggable="false"
+        src="../../public/assets/network.png"
+        alt="Network icon"
+        width={48}
+      />
       <FormContent>
         <p style={{ lineHeight: "1.5", margin: "0" }}>{title}</p>
         <div
           style={{
             display: "grid",
-            gap: "1rem",
+            gap: "12px 32px",
             justifyContent: "space-between",
             alignItems: "center",
-            gridTemplateColumns: "70px minmax(auto, 400px)",
-            columnGap: "32px",
+            gridTemplateColumns: "72px minmax(auto, 400px)",
           }}
         >
           {children}

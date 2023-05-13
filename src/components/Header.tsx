@@ -1,16 +1,23 @@
 import styled from "styled-components";
 
-export function Header() {
+type HeaderProps = {
+  title: string;
+  hiddenUtilityButton: boolean;
+};
+
+export function Header({ title, hiddenUtilityButton }: HeaderProps) {
   return (
     <StyledHeader>
-      Multi-Step Form
+      {title}
       <Utilities>
-        <UtilityButton>
-          <Image
-            src="../../public/assets/question-icon.svg"
-            alt="Question icon"
-          />
-        </UtilityButton>
+        {!hiddenUtilityButton && (
+          <UtilityButton>
+            <Image
+              src="../../public/assets/question-icon.svg"
+              alt="Question icon"
+            />
+          </UtilityButton>
+        )}
         <UtilityButton>
           <Image src="../../public/assets/close-icon.svg" alt="Close icon" />
         </UtilityButton>
@@ -25,7 +32,7 @@ const StyledHeader = styled.header`
   font-size: 18px;
   letter-spacing: 0.2px;
   padding: 5px 4px 4px 8px;
-  margin-bottom: 35px;
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
