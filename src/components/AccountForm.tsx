@@ -15,7 +15,7 @@ export function AccountForm({
   updateFields,
 }: AccountFormProps) {
   return (
-    <FormWrapper title="Enter a valid username and a passowrd to finish.">
+    <FormWrapper title="Enter a valid username and a password to finish.">
       <label>Email:</label>
       <input
         autoFocus
