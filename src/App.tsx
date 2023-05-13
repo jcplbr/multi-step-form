@@ -64,7 +64,7 @@ function App() {
   const [formIsSubmitted, setFormIsSubmitted] = useState(false);
   const [showErrorDialog, setShowErrorDialog] = useState(false);
   const [dialogClosed, setDialogClosed] = useState(false);
-  const audio = new Audio("../../public/assets/wxp-error.mp3");
+  const audio = new Audio("../../public/assets/w95-error.mp3");
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -78,10 +78,12 @@ function App() {
   }
 
   function handleClose() {
+    console.log(dialogClosed);
     setDialogClosed(true);
     setShowErrorDialog(false);
 
     setTimeout(() => {
+      console.log(dialogClosed);
       setDialogClosed(false);
       setShowErrorDialog(true);
       audio.play();
