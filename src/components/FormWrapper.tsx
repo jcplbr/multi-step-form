@@ -11,7 +11,7 @@ export function FormWrapper({ title, children }: FormWrapperProps) {
     <FormContainer>
       <img
         draggable="false"
-        src="../../public/assets/network.png"
+        src="/assets/network.png"
         alt="Network icon"
         width={48}
       />

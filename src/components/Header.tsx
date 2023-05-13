@@ -12,14 +12,11 @@ export function Header({ title, hiddenUtilityButton }: HeaderProps) {
       <Utilities>
         {!hiddenUtilityButton && (
           <UtilityButton>
-            <Image
-              src="../../public/assets/question-icon.svg"
-              alt="Question icon"
-            />
+            <Image src="/assets/question-icon.svg" alt="Question icon" />
           </UtilityButton>
         )}
         <UtilityButton>
-          <Image src="../../public/assets/close-icon.svg" alt="Close icon" />
+          <Image src="/assets/close-icon.svg" alt="Close icon" />
         </UtilityButton>
       </Utilities>
     </StyledHeader>

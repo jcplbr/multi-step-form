@@ -64,7 +64,7 @@ function App() {
   const [formIsSubmitted, setFormIsSubmitted] = useState(false);
   const [showErrorDialog, setShowErrorDialog] = useState(false);
   const [dialogClosed, setDialogClosed] = useState(false);
-  const audio = new Audio("../../public/assets/w95-error.mp3");
+  const audio = new Audio("/assets/w95-error.mp3");
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -96,7 +96,7 @@ function App() {
         <Dialog
           title="Warning Message"
           description="View this page on desktop."
-          scrImg="../../public/assets/warning.png"
+          scrImg="/assets/warning.png"
           showButton={false}
           onClose={handleClose}
         />
@@ -106,7 +106,7 @@ function App() {
             <Dialog
               title="Syntax message"
               description="Critical error"
-              scrImg="../../public/assets/error.png"
+              scrImg="/assets/error.png"
               showButton={true}
               onClose={handleClose}
             />
